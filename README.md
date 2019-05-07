@@ -36,7 +36,7 @@ All of these will be added to `$discord->config`. If You need to modify `client_
 // Modify Client ID
 $discord->config->client_id = "YOUR_NEW_CLIENT_ID";
 // Modify Client Secret
-$discord->config->client_secret = "YOUR_NEW_CLIENT_SECRET;
+$discord->config->client_secret = "YOUR_NEW_CLIENT_SECRET";
 // Modify Bot Token
 $discord->config->token = "YOUR_NEW_BOT_TOKEN";
 ```
