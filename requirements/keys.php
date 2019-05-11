@@ -6,6 +6,7 @@
         $discord->keys["api"]["root"] = "https://discordapp.com/api";
         $discord->keys["api"]["channels"] = $discord->keys["api"]["root"] . "/channels";
         $discord->keys["api"]["guilds"] = $discord->keys["api"]["root"] . "/guilds";
+        $discord->keys["api"]["oauth2"] = $discord->keys["api"]["root"] . "/guilds";
         $discord->keys["api"]["invites"] = $discord->keys["api"]["root"] . "/invites";
         $discord->keys["api"]["users"] = $discord->keys["api"]["root"] . "/users";
         $discord->keys["api"]["webhooks"] = $discord->keys["api"]["root"] . "/webhooks";
