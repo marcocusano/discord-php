@@ -47,5 +47,12 @@ Everything you need to know about the library, such as Classes and "How To Use",
 *I hope that this library can help you and any suggestions or improvements to be made are always welcome.*
 
 ## Change Log
+#### v1.1 (2019/05/11)
+- Added `$discord->users->get` by token
+- Added `$discord->requests->custom` function for custom requests
+- Fixed missing global var
+- Fixed missing oAuth path key
+- Fixed few syntax parts
+- [Examples](/marcocusano/discord-php/wiki/examples) are now here to help you coding
 #### v1.0 (2019/05/07)
 - First release of discord-php lib
