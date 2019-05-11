@@ -213,7 +213,9 @@
         // List Guild Members
         function members($guildID) { global $discord;
             if (is_numeric($guildID)) {
-                return $discord->requests->get($discord->keys["api"]["guilds"] . "/$guildID/members");
+                $params = array("limit" => 1000);
+                $params["isQuery"] = true;
+                return $discord->requests->custom($discord->keys["api"]["guilds"] . "/$guildID/members", "GET", $params);
             } else {
                 return 0;
             }
