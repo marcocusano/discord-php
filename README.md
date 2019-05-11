@@ -48,7 +48,9 @@ Everything you need to know about the library, such as Classes and "How To Use",
 
 ## Change Log
 #### v1.1 (2019/05/11)
+- Added `$discord->users->dms` by token
 - Added `$discord->users->get` by token
+- Added `$discord->users->guilds` by token
 - Added `$discord->requests->custom` function for custom requests
 - Fixed missing global var
 - Fixed missing oAuth path key
