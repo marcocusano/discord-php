@@ -3,7 +3,7 @@
     class DISCORD_REQUESTS {
 
         function custom($url, $method = "PUT", $params = null, $content_length = null, $authType = "Bot", $authKey = "token", $results = 0) { global $discord;
-            return $discord->requests->requestor($url, $method, $params, $content_length, $authType $authKey, $results);
+            return $discord->requests->requestor($url, $method, $params, $content_length, $authType, $authKey, $results);
         }
 
         function delete($endpoint) { global $discord;
