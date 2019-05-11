@@ -53,6 +53,6 @@ Everything you need to know about the library, such as Classes and "How To Use",
 - Fixed missing global var
 - Fixed missing oAuth path key
 - Fixed few syntax parts
-- [Examples](/marcocusano/discord-php/wiki/examples) are now here to help you coding
+- [Examples](https://github.com/marcocusano/discord-php/Examples) are now here to help you coding
 #### v1.0 (2019/05/07)
 - First release of discord-php lib
