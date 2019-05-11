@@ -211,11 +211,9 @@
             function addMemberRole($guildID, $userID, $roleID) { global $discord; return $discord->guilds->memberRole($guildID, $userID, $roleID); }
 
         // List Guild Members
-        function members($guildID) { global $discord;
-            if (is_numeric($guildID)) {
-                $params = array("limit" => 1000);
-                $params["isQuery"] = true;
-                return $discord->requests->custom($discord->keys["api"]["guilds"] . "/$guildID/members", "GET", $params);
+        function members($guildID, $limit = 1000) { global $discord;
+            if (is_numeric($guildID) && is_numeric($limit)) {
+                return $discord->requests->get($discord->keys["api"]["guilds"] . "/$guildID/members?limit=$limit");
             } else {
                 return 0;
             }
