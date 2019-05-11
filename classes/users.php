@@ -25,6 +25,8 @@
         function get($userID = null, $token = null) { global $discord;
             if (is_numeric($userID) && $token) {
                 return $discord->requests->custom($discord->keys["api"]["users"] . "/$userID", "GET", null, null, "Bearer", $token);
+            } else if ($token) {
+                return $discord->requests->custom($discord->keys["api"]["users"] . "/@me", "GET", null, null, "Bearer", $token);
             } else if (is_numeric($userID)) {
                 return $discord->requests->get($discord->keys["api"]["users"] . "/$userID");
             } else {
@@ -35,7 +37,7 @@
         // Get User Guilds
         function guilds($userID = null) { global $discord;
             if (is_numeric($userID)) {
-                return $discord->requests->get($discord->keys["api"]["users"] . "/$guildID/guilds");
+                return $discord->requests->get($discord->keys["api"]["users"] . "/$userID/guilds");
             } else {
                 return $discord->requests->get($discord->keys["api"]["users"] . "/@me/guilds");
             }
