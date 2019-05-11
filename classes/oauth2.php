@@ -23,7 +23,7 @@
 
         // Client Credentials
         // Get Access Token from client_credentials request
-        function clientCredentials($params = null) {
+        function clientCredentials($params = null) { global $discord;
             $params["isQuery"] = true;
             if (!$params["client_id"]) { $params["client_id"] = $discord->config->client_id; }
             if (!$params["client_secret"]) { $params["client_secret"] = $discord->config->client_secret; }
@@ -49,7 +49,7 @@
 
         // Refresh Token Exchange
         // Get a new Token from a refresh_token
-        function refreshToken($params) {
+        function refreshToken($params) { global $discord;
             if ($params["refresh_token"] && $params["redirect_uri"]) {
                 $params["isQuery"] = true;
                 if (!$params["client_id"]) { $params["client_id"] = $discord->config->client_id; }
@@ -63,7 +63,7 @@
         }
 
         // Revoke Token
-        function revoke($params) {
+        function revoke($params) { global $discord;
             if ($params["redirect_uri"]) {
                 if (!$params["client_id"]) { $params["client_id"] = $discord->config->client_id; }
                 if (!$params["client_secret"]) { $params["client_secret"] = $discord->config->client_secret; }
