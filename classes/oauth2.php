@@ -9,7 +9,7 @@
                 $params["isQuery"] = true;
                 // Check for custom response_type
                 $response_type = "code";
-                if ($params["response_type"]) $response_type = $params["response_type"];
+                if ($params["response_type"]) { $response_type = $params["response_type"]; }
                 // Check for custom client_id
                 $client_id = $discord->config->client_id;
                 if ($params["client_id"]) { $client_id = $params["client_id"]; }
