@@ -6,7 +6,6 @@
         // Compile Authorization link
         function authorize($params) { global $discord;
             if ($params["redirect_uri"]) {
-                $params["isQuery"] = true;
                 // Check for custom response_type
                 $response_type = "code";
                 if ($params["response_type"]) { $response_type = $params["response_type"]; }
@@ -14,7 +13,7 @@
                 $client_id = $discord->config->client_id;
                 if ($params["client_id"]) { $client_id = $params["client_id"]; }
                 // Compile and Return URL
-                $url = $discord->keys["api"]["oauth2"] . "/authorize?response_type=$response_type&client_id=$client_id" . http_build_query($params);
+                $url = $discord->keys["api"]["oauth2"] . "/authorize?response_type=$response_type&client_id=$client_id&" . http_build_query($params);
                 return $url;
             } else {
                 return 0;
