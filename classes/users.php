@@ -10,7 +10,7 @@
                 return $discord->requests->get($discord->keys["api"]["users"] . "/@me/channels");
             }
         }
-            function channels($userID = null, $token = null) { global $discord; return $discord->users->dms($userID, $token); }
+            function channels($token = null) { global $discord; return $discord->users->dms($token); }
 
         // Modify Current User
         function edit($params) { global $discord;
