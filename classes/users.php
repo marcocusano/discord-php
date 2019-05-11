@@ -24,7 +24,7 @@
         // Get User
         function get($userID = null, $token = null) { global $discord;
             if (is_numeric($userID) && $token) {
-                return $discord->requests->get($discord->keys["api"]["users"] . "/$userID");
+                return $discord->requests->custom($discord->keys["api"]["users"] . "/$userID", "GET", null, null, "Bearer", $token);
             } else if (is_numeric($userID)) {
                 return $discord->requests->get($discord->keys["api"]["users"] . "/$userID");
             } else {
