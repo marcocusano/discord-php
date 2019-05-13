@@ -8,6 +8,7 @@
         $discord->keys["api"]["gateway"] = $discord->keys["api"]["root"] . "/gateway";
         $discord->keys["api"]["guilds"] = $discord->keys["api"]["root"] . "/guilds";
         $discord->keys["api"]["invites"] = $discord->keys["api"]["root"] . "/invites";
+        $discord->keys["api"]["oauth2"] = $discord->keys["api"]["root"] . "/oauth2";
         $discord->keys["api"]["users"] = $discord->keys["api"]["root"] . "/users";
         $discord->keys["api"]["webhooks"] = $discord->keys["api"]["root"] . "/webhooks";
 
