@@ -41,7 +41,7 @@
         $discord->keys["events"]["GUILD_MEMBER_ADD"] = "GuildMemberAdd";
         $discord->keys["events"]["GUILD_MEMBER_REMOVE"] = "GuildMemberRemove";
         $discord->keys["events"]["GUILD_ROLE_CREATE"] = "GuildRoleCreate";
-        $discord->keys["events"]["GUILD_ROLE_UPDATE"] = "GuildCreate";
+        $discord->keys["events"]["GUILD_ROLE_UPDATE"] = "GuildRoleUpdate";
 
         $discord->keys["events"]["CHANNEL_CREATE"] = "ChannelCreate";
         $discord->keys["events"]["CHANNEL_DELETE"] = "ChannelDelete";
