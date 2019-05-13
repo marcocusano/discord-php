@@ -21,35 +21,4 @@
             $discord->keys["cdn"]["banners"] = $discord->keys["cdn"]["root"] . "/banners/{id}/{value}.png";
             $discord->keys["cdn"]["splashes"] = $discord->keys["cdn"]["root"] . "/splashes/{id}/{value}.png";
 
-        // EVENTS
-
-        $discord->keys["events"]["READY"] = "Ready";
-        $discord->keys["events"]["RESUMED"] = "Resumed";
-        $discord->keys["events"]["PRESENCE_UPDATE"] = "PresenceUpdate";
-        $discord->keys["events"]["PRESENCES_REPLACE"] = "PresencesReplace";
-        $discord->keys["events"]["TYPING_START"] = "TypingStart";
-        $discord->keys["events"]["USER_SETTINGS_UPDATE"] = "UserSettingsUpdate";
-        $discord->keys["events"]["VOICE_STATE_UPDATE"] = "VoiceStateUpdate";
-        $discord->keys["events"]["VOICE_SERVER_UPDATE"] = "VoiceServerUpdate";
-        $discord->keys["events"]["GUILD_MEMBERS_CHUNK"] = "GuildMembersChunk";
-
-        $discord->keys["events"]["GUILD_CREATE"] = "GuildCreate";
-        $discord->keys["events"]["GUILD_DELETE"] = "GuildDelete";
-        $discord->keys["events"]["GUILD_UPDATE"] = "GuildUpdate";
-        $discord->keys["events"]["GUILD_BAN_ADD"] = "GuildBanAdd";
-        $discord->keys["events"]["GUILD_BAN_REMOVE"] = "GuildBanRemove";
-        $discord->keys["events"]["GUILD_MEMBER_ADD"] = "GuildMemberAdd";
-        $discord->keys["events"]["GUILD_MEMBER_REMOVE"] = "GuildMemberRemove";
-        $discord->keys["events"]["GUILD_ROLE_CREATE"] = "GuildRoleCreate";
-        $discord->keys["events"]["GUILD_ROLE_UPDATE"] = "GuildRoleUpdate";
-
-        $discord->keys["events"]["CHANNEL_CREATE"] = "ChannelCreate";
-        $discord->keys["events"]["CHANNEL_DELETE"] = "ChannelDelete";
-        $discord->keys["events"]["CHANNEL_UPDATE"] = "ChannelUpdate";
-
-        $discord->keys["events"]["MESSAGE_CREATE"] = "MessageCreate";
-        $discord->keys["events"]["MESSAGE_DELETE"] = "MessageDelete";
-        $discord->keys["events"]["MESSAGE_UPDATE"] = "MessageUpdate";
-        $discord->keys["events"]["MESSAGE_DELETE_BULK"] = "MessageDeleteBulk";
-
 ?>
