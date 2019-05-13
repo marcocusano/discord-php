@@ -4,12 +4,12 @@
 **Discord PHP** is a PHP library developed to include and simplify the creation and connection between websites, online applications and Discord.
 
 ## Let's Start
-Just PHP 5.6+ is required. Let's start [downloading](https://github.com/marcocusano/discord-php/archive/master.zip) the discord-php library, then extract it to `your_server_path/discord-php`.
+Just PHP 5.6+ is required. Let's start [downloading](https://github.com/marcocusano/discord-php/archive/master.zip) the discord-php library, then extract it to `your_server_path/`.
 
 ## Importing
 Import the `discord.php` file to any `.php` file where you need to use the **Discord PHP lib**.
 ```PHP
-require_once("your_server_path/discord-php/discord.php");
+require_once("your_server_path/discord.php");
 ```
 
 ## Configuration
@@ -23,13 +23,16 @@ Before using the **Discord PHP lib**, You must [create your Discord App](https:/
     "assets" : [
         "rich_assets_name_1",
         "rich_assets_name_2"
-    ]
+    ],
+    
+    "run_bot" : false
 }
 ```
 Where:
-- `client_id` = `@me`;
+- `client_id` = `@me` - Required for **oAuth2** / **Token Exchange** requests;;
 - `client_secret` = Required for **oAuth2** / **Token Exchange** requests;
 - `token` = Required for any **API Request** such as `$discord->users->get();`;
+- `run_bot` = Set `true` if you are running this library as `PHP CLI` looking to create your own Bot using .php (It cannot be used on a WebServer)
 
 All of these will be added to `$discord->config`. If You need to modify `client_id`, `client_secret` and/or `token` dynamically, You can change it as shown below:
 ```PHP
@@ -44,9 +47,22 @@ $discord->config->token = "YOUR_NEW_BOT_TOKEN";
 ## Ready to play
 You are now ready to use the **Discord PHP lib** as you wish!
 Everything you need to know about the library, such as Classes and "How To Use", is described [here in the Wiki](https://github.com/marcocusano/discord-php/wiki).
-*I hope that this library can help you and any suggestions or improvements to be made are always welcome.*
+*I hope this library will help you coding for Discord in PHP. Any suggestion or improvement is always welcome.*
+
+##### Optional: Create your own bot
+If you are looking to create your own bot, coding in PHP and using this lib, please [click here](https://github.com/marcocusano/discord-php/wiki/Bot) to know more.
 
 ## Change Log
+#### v1.2 (2019/05/13)
+- Added `$discord->gateway->get`
+- Added `$discord->gateway->getBot`
+- Added `$discord->gateway->client` (if `$discord->config->run_bot` = `true`)
+- Added custom code
+- Added WebSocket implementation (Based on [@ratchetphp](https://github.com/ratchetphp))
+- Added Bot feature + vendor.zip (Based on [@teamreflex/DiscordPHP](https://github.com/teamreflex/DiscordPHP))
+- Updated `$discord->keys`
+- Fixed some syntax errors
+- Fixed some wrong paths
 #### v1.1 (2019/05/11)
 - Added `$discord->users->dms` by token
 - Added `$discord->users->get` by token
