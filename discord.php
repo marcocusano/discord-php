@@ -24,10 +24,12 @@
 
         // Config
         $discord->config = json_decode(file_get_contents(__DISCORD_ROOT__ . "/config.json"));
+        $discord->memory = array();
         // Keys
         require_once(__DISCORD_REQ__ . "/keys.php");
             $discord->keys["results"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/results.json"));
             $discord->keys["permissions"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/permissions.json"));
+            $discord->keys["events"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/events.json"));
             $discord->keys["verification_levels"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/verification_levels.json"));
             $discord->keys["default_message_notifications"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/default_message_notifications.json"));
             $discord->keys["explicit_content_filters"] = json_decode(file_get_contents(__DISCORD_REQ__ . "/explicit_content_filters.json"));
