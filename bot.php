@@ -10,20 +10,9 @@
 
     $discord->gateway->client->on('ready', function ($client) { global $discord;
 
-        include("custom/events/Ready.php");
-
-        $discord->memory["event_filename"] = null;
-        foreach($discord->keys["events"] as $key => $filename) {
-            $discord->memory["event_filename"] = "custom/events/$filename.php";
-            if ($key != "READY" && $key != "RESUMED" && file_exists($discord->memory["event_filename"])) {
-                $discord->gateway->client->logger->info("Initializing $key Event on $filename.php");
-                $discord->gateway->client->on($key, function ($payload, $client) {
-                     global $discord;
-                     include($discord->memory["event_filename"]);
-                });
-            }
-            $discord->memory["index_events"]++;
-        }
+        $discord->memory["dir_event"] = "custom/events";
+        include($discord->memory["dir_event"] . "/Ready.php");
+        include("requirements/events.php");
 
     });
 
