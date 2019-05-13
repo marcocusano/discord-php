@@ -12,15 +12,17 @@
 
         include("custom/events/Ready.php");
 
+        $discord->memory["event_filename"] = null;
         foreach($discord->keys["events"] as $key => $filename) {
-            $include_filename = "custom/events/$filename.php";
-            if ($key != "READY" && $key != "RESUMED" && file_exists($include_filename)) {
+            $discord->memory["event_filename"] = "custom/events/$filename.php";
+            if ($key != "READY" && $key != "RESUMED" && file_exists($discord->memory["event_filename"])) {
                 $discord->gateway->client->logger->info("Initializing $key Event on $filename.php");
-                $discord->gateway->client->on($discord->keys["events"][$key], function ($message, $client) {
+                $discord->gateway->client->on($key, function ($payload, $client) {
                      global $discord;
-                     include($include_filename);
+                     include($discord->memory["event_filename"]);
                 });
             }
+            $discord->memory["index_events"]++;
         }
 
     });
