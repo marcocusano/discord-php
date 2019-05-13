@@ -13,7 +13,7 @@
         include("custom/events/Ready.php");
 
         foreach($discord->keys["events"] as $key => $filename) {
-            $include_filename = __DISCORD_CUSTOM__ . "events/$filename.php";
+            $include_filename = "custom/events/$filename.php";
             if ($key != "READY" && $key != "RESUMED" && file_exists($include_filename)) {
                 $discord->gateway->client->logger->info("Initializing $key Event on $filename.php");
                 $discord->gateway->client->on($discord->keys["events"][$key], function ($message, $client) {
