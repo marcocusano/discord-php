@@ -2,7 +2,7 @@
 
     /////////////////////////////////////////
     //  Discord-PHP                        //
-    //  v1.1 (May 2019)                    //
+    //  v1.2 (May 2019)                    //
     //  by Marco Cusano                    //
     //  https://www.marcocusano.dev        //
     /////////////////////////////////////////
@@ -45,6 +45,10 @@
         $discord->channels = New DISCORD_CHANNELS;
         // Example usage: $discord->channels->get("CHANNEL_ID");
 
+        require_once(__DISCORD_CLASSES__ . "/gateway.php");
+        $discord->gateway = New DISCORD_GATEWAY;
+        // Example usage: $discord->gateway->get();
+
         require_once(__DISCORD_CLASSES__ . "/guilds.php");
         $discord->guilds = New DISCORD_GUILDS;
         // Example usage: $discord->guilds->get("GUILD_ID");
@@ -75,6 +79,21 @@
         // Customizations
         require_once(__DISCORD_REQ__ . "/settings.php");
         require_once(__DISCORD_REQ__ . "/custom.php");
+
+        /////////////////////////////////////////
+        //                                     //
+        //                 BOT                 //
+        //                                     //
+        /////////////////////////////////////////
+
+        if ($discord->config->run_bot) {
+            $autoload = "vendor/autoload.php";
+            if (file_exists($autoload)) {
+                require_once(__DISCORD_ROOT__ . "/bot.php");
+            } else {
+                echo "Missing 'autoload.php': Unable to run the bot";
+            }
+        }
 
         // Debug
         // var_dump($discord);

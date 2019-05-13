@@ -6,5 +6,7 @@
     "assets" : [
         "rich_assets_name_1",
         "rich_assets_name_2"
-    ]
+    ],
+
+    "run_bot" : false
 }
