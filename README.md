@@ -1,5 +1,7 @@
 ![build](https://img.shields.io/badge/build-stable-brightgreen.svg) ![php-version](https://img.shields.io/badge/php-5.6%2B-blue.svg) ![author](https://img.shields.io/badge/author-Marco%20Cusano-blue.svg)
 
+![background](https://www.marcocusano.dev/api/discord-php/background.jpg)
+
 # discord-php
 **Discord PHP** is a PHP library developed to include and simplify the creation and connection between websites, online applications and Discord.
 
