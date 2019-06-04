@@ -55,6 +55,12 @@ Everything you need to know about the library, such as Classes and "How To Use",
 If you are looking to create your own bot, coding in PHP and using this lib, please [click here](https://github.com/marcocusano/discord-php/wiki/Bot) to know more.
 
 ## Change Log
+#### v1.3 (2019/06/04)
+- Added `$discord->webhooks` functions ([check the wiki](https://www.github.com/marcocusano/discord-php/wiki/WebHooks) to know more)
+- Added `429 too many requests` handler
+- Added medias used on GitHub Documentation
+- Updated `$discord->requests->requestor`
+- Fixed some syntax errors
 #### v1.2 (2019/05/13)
 - Added `$discord->gateway->get`
 - Added `$discord->gateway->getBot`
