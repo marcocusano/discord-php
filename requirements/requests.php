@@ -29,7 +29,27 @@
         // Base Request
         function requestor($url, $method = "GET", $params = null, $content_length = null, $authType = "Bot", $authKey = "token", $results = 0) {
             global $discord;
-
+            // Block reuqests if Rate Limited
+            $now = New DateTime("Now");
+            if ($discord->config->limited >= $now->getTimestamp()) {
+                $response = null;
+                if ($results == "header" || $results == "headers") {
+                    $response = array(
+                        "Content-Type" => "discord-php.limited",
+                        "Retry-After" => $discord->config->limited,
+                        "X-RateLimit-Limit" => 0,
+                        "X-RateLimit-Remaining" => 0,
+                        "X-RateLimit-Reset" => $discord->config->limited
+                    );
+                } else {
+                    $response = New STDCLASS();
+                        $response->code = 429;
+                        $response->message = "You are being rate limited.";
+                        $response->due_date = $discord->config->limited;
+                        $response->limited = $discord->config->limited;
+                }
+                return $response;
+            }
             // Structure Authorization
             $auth = 'Bot ' . $discord->config->$authKey;
             if ($discord->config->$authKey) {
@@ -55,11 +75,12 @@
                         } else {
                             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                                 'Authorization: ' . $auth,
-                                'Content-Type: application/json',
+                                'Content-Type: application/json'
                             ));
                         }
                     }
                     curl_setopt_array($ch, array(
+                        CURLOPT_HEADER         => 1,
                         CURLOPT_RETURNTRANSFER => 1,
                         CURLOPT_FOLLOWLOCATION => 1,
                         CURLOPT_VERBOSE        => 1,
@@ -74,14 +95,32 @@
                         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
                     }
                 }
-                $output = curl_exec($ch);
+                $response = curl_exec($ch);
+                $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+                $headers = substr($response, 0, $header_size);
+                $headers = explode("\n", $headers); $headers_temp = array();
+                foreach ($headers as $h) {
+                    $dh = explode(": ", $h);
+                    if (count($dh) == 2) { $headers_temp[trim($dh[0])] = trim($dh[1]); }
+                }
+                if (is_array($headers_temp) && count($headers_temp)) { $headers = $headers_temp; }
+                $body = substr($response, $header_size);
                 curl_close($ch);
             fclose($f); // Close/Update Debug File
-
+            // Check for Rate Limit
+            if ($headers["X-RateLimit-Reset"]) {
+                setcookie("discord-php.limited", $headers["X-RateLimit-Reset"], $headers["X-RateLimit-Reset"]);
+                $discord->config->limited = $headers["X-RateLimit-Reset"];
+            } else if ($headers["X-RateLimit-Global"]) {
+                $due_date = New DateTime("Now"); $due_date->add(New DateInterval("PT10S"));
+                setcookie("discord-php.limited", $due_date->getTimestamp(), $due_date->getTimestamp());
+                $discord->config->limited = $due_date->getTimestamp();
+            }
             // Results return
-            if ($results == 0) { return JSON_DECODE($output); }
-            if ($results == 1) { return JSON_DECODE($output)->data[0]; }
-            if ($results > 1) { return JSON_DECODE($output)->data; }
+            if ($results == 0 || $results == "body") { return JSON_DECODE($body); }
+            if ($results == "data") { return JSON_DECODE($body)->data[0]; }
+            if ($results == "datas") { return JSON_DECODE($body)->data; }
+            if ($results == "header" || $results == "headers") { return $headers; }
         }
 
     }

@@ -24,6 +24,7 @@
 
         // Config
         $discord->config = json_decode(file_get_contents(__DISCORD_ROOT__ . "/config.json"));
+        $discord->config->limited = $_COOKIE["discord-php.limited"] ? $_COOKIE["discord-php.limited"] : 0;
         $discord->memory = array();
         // Keys
         require_once(__DISCORD_REQ__ . "/keys.php");
