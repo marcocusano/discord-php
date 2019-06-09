@@ -1,4 +1,4 @@
-![build](https://img.shields.io/badge/build-stable-brightgreen.svg) ![php-version](https://img.shields.io/badge/php-5.6%2B-blue.svg) ![author](https://img.shields.io/badge/author-Marco%20Cusano-blue.svg)
+![build](https://img.shields.io/badge/build-stable-brightgreen.svg) ![php-version](https://img.shields.io/badge/php-5.6%2B-blue.svg) ![author](https://img.shields.io/badge/author-Marco%20Cusano-blue.svg) ![discord](https://img.shields.io/badge/api%20version-6+-green.svg?logo=discord&color=7289DA)
 
 ![background](https://www.marcocusano.dev/api/discord-php/background.jpg)
 
