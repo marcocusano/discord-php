@@ -2,7 +2,7 @@
 
     /////////////////////////////////////////
     //  Discord-PHP                        //
-    //  v1.3 (June 2019)                   //
+    //  v1.4 (June 2019)                   //
     //  by Marco Cusano                    //
     //  https://www.marcocusano.dev        //
     /////////////////////////////////////////
@@ -47,6 +47,10 @@
         require_once(__DISCORD_CLASSES__ . "/channels.php");
         $discord->channels = New DISCORD_CHANNELS;
         // Example usage: $discord->channels->get("CHANNEL_ID");
+
+        require_once(__DISCORD_CLASSES__ . "/games.php");
+        $discord->games = New DISCORD_GAMES;
+        // Example usage: $discord->games->launch("discord-invaders");
 
         require_once(__DISCORD_CLASSES__ . "/gateway.php");
         $discord->gateway = New DISCORD_GATEWAY;
