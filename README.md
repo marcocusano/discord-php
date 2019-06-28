@@ -54,7 +54,18 @@ Everything you need to know about the library, such as Classes and "How To Use",
 ##### Optional: Create your own bot
 If you are looking to create your own bot, coding in PHP and using this lib, please [click here](https://github.com/marcocusano/discord-php/wiki/Bot) to know more.
 
+## Games
+[![Discord Invaders](https://i.imgur.com/bYDtnBU.png)](https://www.marcocusano.dev/api/discord-php/games/discord-invaders.php)
+
+## Who is using this library?
+[![Overhack](https://i.imgur.com/EgUAie7.png)](https://www.overhack.one) [![Fortnite Italia](https://i.imgur.com/NLOBkZw.png)](https://www.fortnite.it) [![Apex Legends Italia](https://i.imgur.com/NYGYOTI.png)](https://www.apexlegends.it)
+
 ## Change Log
+#### v1.4 (2019/06/28)
+- Discord Hack Week update
+- Added `$discord->games` functions
+- Added `Discord Invaders` game
+- Launch games (for WebHosting only)
 #### v1.3 (2019/06/04)
 - Added `$discord->webhooks` functions ([check the wiki](https://www.github.com/marcocusano/discord-php/wiki/WebHooks) to know more)
 - Added `429 too many requests` handler
