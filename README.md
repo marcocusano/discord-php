@@ -1,12 +1,12 @@
-![build](https://img.shields.io/badge/build-stable-brightgreen.svg) ![php-version](https://img.shields.io/badge/php-5.6%2B-blue.svg) ![author](https://img.shields.io/badge/author-Marco%20Cusano-blue.svg) ![discord](https://img.shields.io/badge/api%20version-6+-green.svg?logo=discord&color=7289DA)
+![build](https://img.shields.io/badge/build-deprecated-red.svg) ![php-version](https://img.shields.io/badge/php-5.6%2B-blue.svg) ![author](https://img.shields.io/badge/author-Marco%20Cusano-blue.svg) ![discord](https://img.shields.io/badge/api%20version-6-red.svg?logo=discord&color=7289DA)
 
-![background](https://www.marcocusano.dev/api/discord-php/background.jpg)
+[![deprecated](https://img.shields.io/badge/WARNING-Library%20deprecated,%20please%20check%20the%20v2%20Branch-red.svg?color=red&style=for-the-badge)](https://www.marcocusano.dev/github/discord-php)
 
 # discord-php
 **Discord PHP** is a PHP library developed to include and simplify the creation and connection between websites, online applications and Discord.
 
 ## Let's Start
-Just PHP 5.6+ is required. Let's start [downloading](https://github.com/marcocusano/discord-php/archive/master.zip) the discord-php library, then extract it to `your_server_path/`.
+Just PHP 5.6+ is required. Let's start [downloading](https://github.com/marcocusano/discord-php/archive/v1.zip) the discord-php library, then extract it to `your_server_path/`.
 
 ## Importing
 Import the `discord.php` file to any `.php` file where you need to use the **Discord PHP lib**.
