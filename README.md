@@ -126,7 +126,7 @@ $channel = $discord->Channels("CHANNEL_ID");
  [![Discord Invaders](https://i.imgur.com/bYDtnBU.png)](https://www.marcocusano.dev/api/discord-php/games/discord-invaders.php)
 
 ## Who is using this library?
- [![WeSport](https://i.imgur.com/EgUAie7.png)](https://www.wesport.gg)   [![Fortnite Italia](https://i.imgur.com/NLOBkZw.png)](https://www.fortnite.it)   [![Apex Legends Italia](https://i.imgur.com/NYGYOTI.png)](https://www.apexlegends.it)
+[![WeSport](https://i.imgur.com/EgUAie7.png)](https://www.wesport.gg)   [![Fortnite Italia](https://i.imgur.com/NLOBkZw.png)](https://www.fortnite.it)   [![Apex Legends Italia](https://i.imgur.com/NYGYOTI.png)](https://www.apexlegends.it)
 
 ## Change Log
 #### v2.0 (2021/03/28)
